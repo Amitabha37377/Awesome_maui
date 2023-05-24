@@ -119,7 +119,7 @@ local control_slider = awful.popup {
   ontop = true,
   bg = "#111111",
   visible = false,
-  placement = function(c) awful.placement.top_right(c, { margins = { top = 58, right = 8 } }) end,
+  placement = function(c) awful.placement.top_right(c, { margins = { top = 228, right = 8 } }) end,
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
   end,

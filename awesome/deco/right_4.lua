@@ -6,7 +6,8 @@ local naughty = require("naughty")
 
 
 --Separator
-local Separator = wibox.widget.textbox("     ")
+local Separator = wibox.widget.textbox("   ")
+local Separator2 = wibox.widget.textbox("   ")
 local Separator_small = wibox.widget.textbox("     ")
 Separator.forced_height = 120
 Separator.forced_width = 20
@@ -30,8 +31,8 @@ end)
 --Control applet button
 Button = wibox.widget {
   widget = wibox.widget.imagebox,
-  image = os.getenv("HOME") .. "/.icons/papirus-icon-theme-20230301/Papirus/user.png",
-  resize = false,
+  image = os.getenv("HOME") .. "/.icons/papirus-icon-theme-20230301/Papirus/bluetooth.png",
+  resize = true,
   opacity = 1,
 }
 
@@ -83,13 +84,13 @@ right_fourth:setup({
     Screenshot,
     layout = wibox.container.place
   },
-  Separator,
+  Separator2,
   {
     Button,
     layout = wibox.container.place
   },
 
-  Separator,
+  Separator2,
   layout = wibox.layout.fixed.horizontal,
   height = 40
 })

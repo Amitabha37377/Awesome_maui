@@ -87,7 +87,7 @@ local Menu = awful.popup {
   -- forced_width = 400,
   placement = function(c)
     awful.placement.top_right(c,
-      { margins = { top = 428, bottom = 5, left = 8, right = 8 } })
+      { margins = { top = 598, bottom = 5, left = 8, right = 8 } })
   end,
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)

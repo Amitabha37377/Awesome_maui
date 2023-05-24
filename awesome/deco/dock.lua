@@ -2,6 +2,8 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local modkey = RC.vars.modkey
+local hotkeys_popup = require("awful.hotkeys_popup")
 
 local deco = {
   taglist = require("deco.taglist"),
@@ -10,6 +12,9 @@ local deco = {
 local taglist_buttons = deco.taglist()
 local tasklist_buttons = deco.tasklist()
 
+local menubar = require("menubar")
+
+
 local _M = {}
 
 --Separator
@@ -17,6 +22,10 @@ local Separator_large = wibox.widget.textbox("     ")
 local Separator = wibox.widget.textbox("   ")
 Separator.forced_height = 67
 -- Separator_small.forced_height = 57
+
+local bg_color = "#11111199"
+local onclick_color = "#2a2c61"
+local hover_color = "#111111"
 
 
 ------------------------------------
@@ -49,7 +58,7 @@ local button1 = wibox.widget {
     bottom = 3,
     widget = wibox.container.margin
   },
-  bg = "#111111",
+  bg = bg_color,
   shape = gears.shape.rounded_rect,
   widget = wibox.container.background,
   forced_height = 53,
@@ -120,10 +129,6 @@ end)
 --------------------------------------
 --Imagebox Widget
 --------------------------------------
-local bg_color = "#111111"
-local onclick_color = "#2a2c61"
-local hover_color = "#02031f"
-
 Item1 = wibox.widget {
 
   {
@@ -473,7 +478,7 @@ local layoutbox = wibox.widget {
 local dock = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#111111aa",
   visible = true,
   -- maximum_width = 200,
@@ -771,3 +776,8 @@ end)
 button1:connect_signal("button1::release", function()
   button1.bg = hover_color
 end)
+
+
+-- Inside your keybindings section
+-- awful.key({ "Mod4" }, "b", function() dock.visible = not dock.visible end,
+--   { description = "Toggle dock", group = "Custom" })

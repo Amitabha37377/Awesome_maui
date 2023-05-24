@@ -76,7 +76,7 @@ local user_widget = wibox.widget({
 
 -- Define colors for on and off states
 local on_color = "#5294E2"
-local off_color = "#FFFFFF30"
+local off_color = "#b7b2f1"
 
 -- Define font settings for text
 local font = "CaskaydiaCove Nerd Font 13"
