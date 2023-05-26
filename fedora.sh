@@ -96,6 +96,8 @@ sudo dnf install brave-browser -y
 
 # Picom animation
 echo "=== ${motion} Section: Animation ==="
+sudo dnf install dbus-devel gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel libGL-devel libEGL-devel meson pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel
+sudo dnf intalll cmake make gcc gcc-c++ -y 
 git clone https://github.com/jonaburg/picom.git
 cd picom
 meson --buildtype=release . build
