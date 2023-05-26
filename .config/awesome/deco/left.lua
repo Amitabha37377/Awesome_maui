@@ -64,7 +64,7 @@ end)
 local left_tags = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#222222",
   visible = true,
   -- maximum_width = 200,
@@ -78,7 +78,7 @@ local left_tags = awful.popup {
 local top_left = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#111111",
   visible = true,
   maximum_width = 200,
