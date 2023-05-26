@@ -15,11 +15,12 @@ echo "
 # Emojis
 rocket="🚀"
 motion="🏃"
+forbidden="🚫"
 
+echo "=== ${rocket} Section: Check for user privileges ==="
 # Check if running as root
-echo "=== ${rocket} Section: Check for root ==="
-if [[ $EUID -ne 0 ]]; then
-    echo "🚫 This script must be run as root."
+if [[ $EUID -eq 0 ]]; then
+    echo "${forbidden} This script must not be run as root."
     exit 1
 fi
 
