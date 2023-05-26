@@ -7,10 +7,11 @@ local naughty = require("naughty")
 
 --Separator
 local Separator = wibox.widget.textbox("   ")
-local Separator2 = wibox.widget.textbox("   ")
-local Separator_small = wibox.widget.textbox("     ")
+local Separator2 = wibox.widget.textbox(" ")
+local Separator_small = wibox.widget.textbox("  ")
 Separator.forced_height = 120
 Separator.forced_width = 20
+Separator2.forced_width = 5
 Separator_small.forced_height = 33
 
 --Screenshot
@@ -31,7 +32,7 @@ end)
 --Control applet button
 Button = wibox.widget {
   widget = wibox.widget.imagebox,
-  image = os.getenv("HOME") .. "/.icons/papirus-icon-theme-20230301/Papirus/bluetooth.png",
+  image = os.getenv("HOME") .. "/.icons/papirus-icon-theme-20230301/Papirus/setting_maui.png",
   resize = true,
   opacity = 1,
 }
@@ -85,8 +86,16 @@ local right_fourth = awful.popup {
 right_fourth:setup({
   -- Separator,
 
-  my_round_systray,
+  -- my_round_systray,
   -- Separator,
+  Separator_small,
+  -- {
+  --   Button,
+  --   layout = wibox.container.place
+  -- },
+  --
+  -- Separator2,
+  --
   {
     Screenshot,
     layout = wibox.container.place
@@ -97,34 +106,14 @@ right_fourth:setup({
     layout = wibox.container.place
   },
 
-  Separator2,
+  Separator_small,
   layout = wibox.layout.fixed.horizontal,
   height = 40
 })
 
 local popup2 = require("deco.widgets.control_center")
 
--- local control_panel = awful.popup {
---   screen = s,
---   widget = wibox.container.background,
---   ontop = true,
---   bg = "#111111",
---   visible = false,
---   placement = function(c) awful.placement.top_right(c, { margins = { top = 58, right = 8 } }) end,
---   shape = function(cr, width, height)
---     gears.shape.rounded_rect(cr, width, height, 5)
---   end,
---   opacity = 0.9
--- }
---
--- control_panel:setup({
---   -- brightness_container,
---   wifi,
---   -- volume_container,
---   layout = wibox.layout.fixed.vertical
--- })
-
 -- Define button callback function
-right_fourth:connect_signal("button::release", function()
+Button:connect_signal("button::release", function()
   popup2.visible = not popup2.visible
 end)

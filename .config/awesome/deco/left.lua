@@ -87,6 +87,12 @@ local top_left = awful.popup {
       { margins = { top = 8, bottom = 8, right = 8, left = left_tags.width + 15 } })
   end,
 
+  -- placement = function(c)
+  --   awful.placement.top(c,
+  --     { margins = { top = 8, bottom = 8, --[[ right = 8, left = left_tags.width + 15 ]] } })
+  -- end,
+
+
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
   end,

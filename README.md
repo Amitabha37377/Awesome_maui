@@ -1,40 +1,60 @@
+
 # Awesome_maui
 
-Welcome to the Awesome_maui repository! This repository contains a collection of resources and configurations for the Maui desktop environment, aimed at enhancing your desktop experience.
+Welcome to the Awesome_maui repository! This repository contains the dotfiles used to replicate the maui shell using awesome window manager api. 
 
+**<i>Disclaimer:</i>**<i>The codebase is really messy, also I am pretty noob in awesomewm api or lua, so handle this files carefully</i>
+
+![look](/screen-Shot/main.png)
 ## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Setup](#Setup)
-- [Look & Feel](#Look&Feel)
+- [Dependencies](#Dependencies)
+- [Installation (Manual)](#Installation (Manual))
+- [Installation using scripts](#installation-using-script) 
+- [Features And Widgets](#features-and-widgets)
+- [Gallery](#gallery)
+- [Defualts](#defaults)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Introduction
-Awesome_maui is a curated collection of configurations, themes, and additional resources for the Maui desktop environment. It provides users with a variety of options to customize and personalize their desktop, creating a visually appealing and efficient workflow.
+## Dependencies
+- **Awesome window manager:** You are probably fine with either the stable release or git version. Configs should work with either of them.
+- **Rofi:** The app launcher. For debian based systems you have to build it manualy. For fedora or arch the package available in native repo is fine.
+- **Picom:** The compositor. I am using this fork:-https://github.com/pijulius/picom, although any picom fork that supports rounded corners and blur is fine for the setup to work well.
+- **Nitrogen:** For changing wallpaper
+- **Xinput:** This programme enables touch screen gestures in awesome wm. <i>You can skip installing this if you don't care about touchpad gestures</i>
+- **Acpi:** For the battery widget. <i>Again if you can skip this if you are using a desktop and don't care about showing battery percentage</i>
+- **Light:** Used for changing brightness. The brightness slider is dependant on this programme.
+- **Alsa Utils:** Used for changing volume, the volume slider require this.
+- **Scrot & Spectacle:** For taking scrrenshots.
+- **Playerctl:** The music player widget is dependant on this programme.
+- **Dunst:** For some notifications
+- **Lxappearance:** Used for switching themes.
+- **Fonts:** The fonts used for this setup are: **JetBrains Nerd Font**, **CaskaydiaCove Nerd Font**, **Inter Font(Optional)**
 
-## Features
-- Preconfigured Awesome Window Manager settings
-- Custom themes and visual enhancements
-- Additional resources and tools for enhanced productivity
-- Font additions for improved typography
-- Easy installation and setup scripts
 
-## Getting Started
-To get started with Awesome_maui, follow these steps:
+## Installation (Manual)
 
-1. Ensure that you have Maui desktop environment installed on your system. If not, refer to the [Maui documentation](https://maui-project.org/) for installation instructions.
-2. Clone this repository to your local machine:
-   ```shell
-   git clone https://github.com/Amitabha37377/Awesome_maui.git
-   ```
-3. Explore the various directories and files within the repository to find the resources and configurations that interest you.
-4. Follow the instructions provided in the respective sections or files to install and apply the desired configurations, themes, or fonts.
-5. Customize the settings according to your preferences and experiment with different combinations to create your unique desktop environment.
+1. Clone the repository:
+```bash
+git clone git@github.com:Amitabha37377/Awesome_maui.git
+```
+2. Install the dependencies listed above. (The names may vary according to your distro. These are written according to fedora linux)
 
-# Setup
+3. Copy the directories in their required locations:-
+```bash
+cd Awesome_maui
+cp -r .config/awesome ~/.config/
+cp -r papirus-icon-theme-20230301/ ~/.icons/
+cp -r .config/rofi ~/.config/       #Optional
+cp -r .config/kitty ~/.config/       #Optional
+cp -r .config/nvim ~/.config/       #Optional
+```
+4. Install the necessery fonts.
+5. Restart awesome wm.
 
+
+## Installation using script
+####<i>(Thanks to <a href="https://github.com/rafay99-epic">Abdul Rafay</a>)</i>
 To set up this desktop environment, please follow the instructions below.
 
 1. Open the terminal on your Linux system.
@@ -55,7 +75,7 @@ To set up this desktop environment, please follow the instructions below.
        ```bash
        chmod +x arch.sh
        ./arch.sh
-       ```
+      ```
        **Note:** Please ensure that you run this script as a normal user and not as root.
 
    - Other Distributions:
@@ -67,9 +87,39 @@ We hope you enjoy using the Awesome_maui desktop environment! Should you encount
 
 Happy computing!
 
-# Look & Feel
-This is the look of my awesome Window manager.
-![look](/screen-Shot/v0a4prarju1b1.jpg)
+## Features and Widgets
+- A toggleable dock where you can add your favorite apps so that you can open them quickly.
+- Taglist cum tasklist, so that you can keep track of what programme you opened on which workspace.
+- Music Player widget with play/pause, loop, next, previous buttons. <i>Only tested on youtube. Should work for other music players fine though</i>
+- Vertical titlebars.
+... And many more.
+
+## Gallery
+![look](/screen-Shot/blank.png)
+![look](/screen-Shot/main.png)
+![look](/screen-Shot/rofi.png)
+![look](/screen-Shot/terminals.png)
+
+## Defaults
+**Superkey:** Windows key
+**Terminal:** Kitty
+**File Manager:** Thunar
+**Text Editor:** Neovim
+
+#### Keybindings
+**Super + Enter:** Launches terminal (kitty)
+**Super + d:** Launches rofi.
+**Super + b:** Hides the dock.
+**Super + s:** Opens the list of all shortchut keys.
+**Super + shift + q:** Closes the active window.
+**Super + <1-9>:** Goes to the respective workspace.
+**Super + shift + <1-9>:** Moves the active window to the respective workspace.
+
+##Acknowledgement
+- Thanks to <a href="https://github.com/rafay99-epic">Abdul Rafay</a></i> for the installation scripts and other contributions.
+- <a href="https://github.com/streetturtle/awesome-wm-widgets">Streetturtle</a> for widgets some of which I used in my config.
+- <a href="https://github.com/BlingCorp/bling">Bling</a> for awesome modules I used in the config (Specially the music player widget)
+- Awesome wm team for creating and maintaining such an amazing window manager
 
 ## Contributing
 Contributions to Awesome_maui are welcome and encouraged. If you have improvements, new configurations, or additional resources that you would like to contribute, please follow these steps:
