@@ -36,6 +36,13 @@ Button = wibox.widget {
   opacity = 1,
 }
 
+-- Button:connect_signal("button::press", function(_, _, _, button)
+--   if button == 1 then
+--     dock.visible = not dock.visible
+--   end
+-- end)
+--
+
 --Systray
 
 local my_round_systray = wibox.widget {

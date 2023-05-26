@@ -777,7 +777,7 @@ button1:connect_signal("button1::release", function()
   button1.bg = hover_color
 end)
 
-
+return dock
 -- Inside your keybindings section
 -- awful.key({ "Mod4" }, "b", function() dock.visible = not dock.visible end,
 --   { description = "Toggle dock", group = "Custom" })
