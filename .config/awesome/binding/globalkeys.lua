@@ -5,7 +5,7 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Menubar library
 local menubar = require("menubar")
-
+local dock = require("deco.dock")
 -- Resource Configuration
 local modkey = RC.vars.modkey
 local terminal = RC.vars.terminal
@@ -172,6 +172,10 @@ function _M.get()
     awful.key({}, "XF86AudioMute", function()
       os.execute("amixer -q set Master toggle")
     end, { description = "toggle mute", group = "hotkeys" }),
+
+    --Toggle Dock
+    awful.key({ "Mod4" }, "b", function() dock.visible = not dock.visible end,
+      { description = "Toggle dock", group = "Custom" }),
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Menubar

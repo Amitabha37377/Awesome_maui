@@ -27,7 +27,7 @@ local _M = {}
 local right_second = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#111111",
   visible = true,
   maximum_width = 200,
@@ -259,7 +259,7 @@ local music_player = awful.popup {
   ontop = true,
   bg = "#111111",
   visible = false,
-  placement = function(c) awful.placement.top_right(c, { margins = { top = 418, right = 8 } }) end,
+  placement = function(c) awful.placement.top_right(c, { margins = { top = 58, right = 8 } }) end,
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
   end,
@@ -313,7 +313,71 @@ music_player:setup({
   layout = wibox.layout.fixed.vertical
 })
 
+local music_player2 = awful.popup {
+  screen = s,
+  widget = wibox.container.background,
+  ontop = true,
+  bg = "#111111",
+  visible = false,
+  placement = function(c) awful.placement.top_right(c, { margins = { top = 58, right = 8 } }) end,
+  shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 5)
+  end,
+  opacity = 0.9
+}
+
+music_player2:setup({
+  button_sep2,
+  {
+    Separator,
+    {
+      {
+        art,
+        layout = wibox.container.place
+      },
+      widget = wibox.container.margin,
+      margins = 10,
+    },
+    Separator,
+    {
+      {
+        title_widget,
+        artist_widget,
+        layout = wibox.layout.fixed.vertical
+      },
+      widget = wibox.container.margin,
+      margins = 6,
+    },
+    Separator,
+    layout = wibox.layout.fixed.horizontal,
+  },
+  -- button_sep2,
+  {
+    button_sep2,
+    button_sep2,
+    button_sep2,
+    button_sep2,
+    button_sep2,
+    Previous,
+    button_sep2,
+    Pause,
+    button_sep2,
+    Next,
+    button_sep2,
+    button_sep2,
+    Loop,
+    layout = wibox.layout.fixed.horizontal
+  },
+  button_sep2,
+  button_sep2,
+  layout = wibox.layout.fixed.vertical
+})
+
+
+
 -- Define button callback function
 right_second:connect_signal("button::release", function()
-  music_player.visible = not music_player.visible
+  music_player2.visible = not music_player2.visible
 end)
+
+return music_player

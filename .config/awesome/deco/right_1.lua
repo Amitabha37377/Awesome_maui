@@ -30,7 +30,7 @@ local batteryarc_widget = require("deco.widgets.batteryarc")
 local right_first = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#111111",
   visible = true,
   -- maximum_width = 200,
@@ -87,7 +87,7 @@ local Menu = awful.popup {
   -- forced_width = 400,
   placement = function(c)
     awful.placement.top_right(c,
-      { margins = { top = 598, bottom = 5, left = 8, right = 8 } })
+      { margins = { top = 58, bottom = 5, left = 8, right = 8 } })
   end,
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
@@ -121,7 +121,56 @@ Menu:setup({
   layout = wibox.layout.fixed.horizontal
 })
 
+
+local Menu2 = awful.popup {
+  screen = s,
+  widget = wibox.container.background,
+  ontop = true,
+  bg = "#111111",
+  visible = false,
+  -- maximum_width = 200,
+  forced_height = 67,
+  -- forced_width = 400,
+  placement = function(c)
+    awful.placement.top_right(c,
+      { margins = { top = 58, bottom = 5, left = 8, right = 8 } })
+  end,
+  shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 5)
+  end,
+  opacity = 0.9
+}
+
+Menu2:setup({
+  Separator_aa,
+  {
+    Shutdown,
+    layout = wibox.container.place
+  },
+  Separator_aa,
+  {
+    Restart,
+    layout = wibox.container.place
+  },
+  Separator_aa,
+  {
+    Logout,
+    layout = wibox.container.place
+  },
+  Separator_aa,
+  {
+    Lock,
+    layout = wibox.container.place
+  },
+  Separator_aa,
+
+  layout = wibox.layout.fixed.horizontal
+})
+
+
 -- Define button callback function
 right_first:connect_signal("button::release", function()
-  Menu.visible = not Menu.visible
+  Menu2.visible = not Menu2.visible
 end)
+
+return Menu

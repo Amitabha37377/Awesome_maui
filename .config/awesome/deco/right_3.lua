@@ -20,7 +20,7 @@ local _M = {}
 local right_third = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#111111",
   visible = true,
   maximum_width = 200,
@@ -119,7 +119,7 @@ local control_slider = awful.popup {
   ontop = true,
   bg = "#111111",
   visible = false,
-  placement = function(c) awful.placement.top_right(c, { margins = { top = 228, right = 8 } }) end,
+  placement = function(c) awful.placement.top_right(c, { margins = { top = 58, right = 8 } }) end,
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
   end,
@@ -133,7 +133,30 @@ control_slider:setup({
   layout = wibox.layout.fixed.vertical
 })
 
+local control_slider2 = awful.popup {
+  screen = s,
+  widget = wibox.container.background,
+  ontop = true,
+  bg = "#111111",
+  visible = false,
+  placement = function(c) awful.placement.top_right(c, { margins = { top = 58, right = 8 } }) end,
+  shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 5)
+  end,
+  opacity = 0.9
+}
+
+control_slider2:setup({
+  -- brightness_container,
+  sliders,
+  -- volume_container,
+  layout = wibox.layout.fixed.vertical
+})
+
+
 -- Define button callback function
 right_third:connect_signal("button::release", function()
-  control_slider.visible = not control_slider.visible
+  control_slider2.visible = not control_slider2.visible
 end)
+
+return control_slider

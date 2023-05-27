@@ -25,7 +25,7 @@ Separator.forced_height = 67
 
 local bg_color = "#11111199"
 local onclick_color = "#2a2c61"
-local hover_color = "#111111"
+local hover_color = "#000000"
 
 
 ------------------------------------
@@ -479,7 +479,7 @@ local dock = awful.popup {
   screen = s,
   widget = wibox.container.background,
   ontop = false,
-  bg = "#111111aa",
+  bg = "#111111dd",
   visible = true,
   -- maximum_width = 200,
   maximum_height = 67,
@@ -491,7 +491,7 @@ local dock = awful.popup {
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
   end,
-  opacity = 0.9
+  -- opacity = 0.9
 }
 
 dock:struts {
@@ -777,7 +777,7 @@ button1:connect_signal("button1::release", function()
   button1.bg = hover_color
 end)
 
-
+return dock
 -- Inside your keybindings section
 -- awful.key({ "Mod4" }, "b", function() dock.visible = not dock.visible end,
 --   { description = "Toggle dock", group = "Custom" })

@@ -64,7 +64,7 @@ end)
 local left_tags = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#222222",
   visible = true,
   -- maximum_width = 200,
@@ -78,7 +78,7 @@ local left_tags = awful.popup {
 local top_left = awful.popup {
   screen = s,
   widget = wibox.container.background,
-  ontop = true,
+  ontop = false,
   bg = "#111111",
   visible = true,
   maximum_width = 200,
@@ -86,6 +86,12 @@ local top_left = awful.popup {
     awful.placement.top_left(c,
       { margins = { top = 8, bottom = 8, right = 8, left = left_tags.width + 15 } })
   end,
+
+  -- placement = function(c)
+  --   awful.placement.top(c,
+  --     { margins = { top = 8, bottom = 8, --[[ right = 8, left = left_tags.width + 15 ]] } })
+  -- end,
+
 
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
