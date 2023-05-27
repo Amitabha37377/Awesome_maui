@@ -1,0 +1,14 @@
+picom: compositor
+nitrogen: wallpapers
+xinput: touchscreen gestures
+rofi: app launcher
+kitty: terminal emulator
+thunar: file manager
+spectacle, scrot: screenshots
+dunst: some notifications
+playerctl : required for the music widget
+lxappearance: for theme switching
+light: brightness control
+alsa-utils: volume control
+fonts: Jetbrainsmono nerd font, CaskaydiaCove Nerd Font, Inter font
+acpi: for battery widget

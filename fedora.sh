@@ -71,6 +71,15 @@ pkg=(
     'flatpak'
     'discord'
     'papirus-icon-theme'
+    'nitrogen'
+    'thunar'
+    'spectacle'
+    'dunst'
+    'playerctl'
+    'lxappearance'
+    'light'
+    'alsa-utils'
+    'acpi'
 )
 sudo dnf install -y "${pkg[@]}"
 
@@ -96,21 +105,35 @@ sudo dnf install brave-browser -y
 
 # Picom animation
 echo "=== ${motion} Section: Animation ==="
+
 sudo dnf install dbus-devel gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel libGL-devel libEGL-devel meson pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel
+
 sudo dnf intalll cmake make gcc gcc-c++ -y 
-git clone https://github.com/jonaburg/picom.git
+
+sudo dnf install libX11 libXcomposite libXdamage libXfixes libXext libXrender libXrandr libXinerama pkgconf xorg-x11-proto-devel xdg-utils xorg-x11-font-utils libpcap libconfig libdrm mesa-libGL mesa libdbus asciidoc -y 
+
+git clone https://github.com/pijulius/picom.git
 cd picom
-meson --buildtype=release . build
-ninja -C build
-sudo ninja -C build install
+make 
+make docs
+sudo make install
 cd ..
 rm -rf picom
+
+# Different Version of Picom: 
+# git clone https://github.com/jonaburg/picom.git
+# cd picom
+# meson --buildtype=release . build
+# ninja -C build
+# sudo ninja -C build install
+# cd ..
+# rm -rf picom
 
 # Moving Files
 echo "=== ${rocket} Section: Moving Files ==="
 config_location="$HOME/.config"
 cp -R -n .config/*   "$config_location"
-cp -R -n .icons  .fonts "$HOME"
+cp -R -n .icons .fonts "$HOME"
 
 
 echo "✅ Setup complete."
