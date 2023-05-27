@@ -3,8 +3,6 @@
 
 Welcome to the Awesome_maui repository! This repository contains the dotfiles used to replicate the maui shell using awesome window manager api. 
 
-**<i>Disclaimer:</i>**<i>The codebase is really messy, also I am pretty noob in awesomewm api or lua, so handle this files carefully</i>
-
 ![look](/screen-Shot/main.png)
 ## Table of Contents
 - [Dependencies](#Dependencies)
@@ -43,18 +41,18 @@ git clone git@github.com:Amitabha37377/Awesome_maui.git
 3. Copy the directories in their required locations:-
 ```bash
 cd Awesome_maui
-cp -r .config/awesome ~/.config/
-cp -r papirus-icon-theme-20230301/ ~/.icons/
-cp -r .config/rofi ~/.config/       #Optional
-cp -r .config/kitty ~/.config/       #Optional
-cp -r .config/nvim ~/.config/       #Optional
+cp -r .config/awesome $HOME/.config/
+cp -r .icons .fonts  $HOME
+cp -r .config/rofi $HOME/.config/       #Optional
+cp -r .config/kitty $HOME/.config/       #Optional
+cp -r .config/nvim $HOME/.config/       #Optional
 ```
 4. Install the necessery fonts.
 5. Restart awesome wm.
 
 
 ## Installation using script
-####<i>(Thanks to <a href="https://github.com/rafay99-epic">Abdul Rafay</a>)</i>
+#### <i>(Thanks to <a href="https://github.com/rafay99-epic">Abdul Rafay</a>)</i>
 To set up this desktop environment, please follow the instructions below.
 
 1. Open the terminal on your Linux system.
@@ -77,6 +75,12 @@ To set up this desktop environment, please follow the instructions below.
        ./arch.sh
       ```
        **Note:** Please ensure that you run this script as a normal user and not as root.
+    - Fedora Linux:
+      - If you are using Fedora Linux, run the `fedora.sh` script:
+       ```bash
+        chmod +x fedora.sh
+        ./fedora.sh
+       ```
 
    - Other Distributions:
      - For other Linux distributions, please refer to the `pkg` file for specific installation instructions tailored to your distro.
@@ -84,8 +88,6 @@ To set up this desktop environment, please follow the instructions below.
 **Note:** It is important to carefully follow the instructions specific to your distribution to ensure a successful setup.
 
 We hope you enjoy using the Awesome_maui desktop environment! Should you encounter any issues or have any questions, please refer to the project documentation or reach out to the community for assistance.
-
-Happy computing!
 
 ## Features and Widgets
 - A toggleable dock where you can add your favorite apps so that you can open them quickly.
@@ -115,7 +117,7 @@ Happy computing!
 **Super + <1-9>:** Goes to the respective workspace.
 **Super + shift + <1-9>:** Moves the active window to the respective workspace.
 
-##Acknowledgement
+## Acknowledgement
 - Thanks to <a href="https://github.com/rafay99-epic">Abdul Rafay</a></i> for the installation scripts and other contributions.
 - <a href="https://github.com/streetturtle/awesome-wm-widgets">Streetturtle</a> for widgets some of which I used in my config.
 - <a href="https://github.com/BlingCorp/bling">Bling</a> for awesome modules I used in the config (Specially the music player widget)
@@ -140,11 +142,15 @@ Contributions to Awesome_maui are welcome and encouraged. If you have improvemen
    ```
 6. Open a pull request in this repository, describing the changes you have made and providing any relevant details.
 
+Happy computing!
+
 ## License
 The content in this repository is licensed under the [MIT License](/LICENSE). You are free to use, modify, and distribute the resources and configurations as per the terms of the license.
 
-Please note that Awesome_maui is provided as-is, without any warranty or guarantee. Use it at your own risk.
+## Disclaimer
+- Please note that Awesome_maui is provided as-is, without any warranty or guarantee. Use it at your own risk.
 
+- **<i>Disclaimer:</i>**<i>The codebase is really messy, also I am pretty noob in awesomewm api or lua, so handle this files carefully</i>
 
 
 
