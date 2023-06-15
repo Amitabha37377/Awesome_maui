@@ -13,6 +13,7 @@ Welcome to the Awesome_maui repository! This repository contains the dotfiles us
 - [Features And Widgets](#features-and-widgets)
 - [Gallery](#gallery)
 - [Defualts](#defaults)
+- [To Do](#todo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -120,6 +121,13 @@ Happy computing!
 - <a href="https://github.com/streetturtle/awesome-wm-widgets">Streetturtle</a> for widgets some of which I used in my config.
 - <a href="https://github.com/BlingCorp/bling">Bling</a> for awesome modules I used in the config (Specially the music player widget)
 - Awesome wm team for creating and maintaining such an amazing window manager
+
+## ToDo
+- [ ] Dynamic placement of the popup boxes.
+- [ ] A notification panel
+- [ ] A stylish dashboard with some added features
+- [ ] Fixing the bugs and glitches
+- [ ] Adding more widgets and functionality
 
 ## Contributing
 Contributions to Awesome_maui are welcome and encouraged. If you have improvements, new configurations, or additional resources that you would like to contribute, please follow these steps:
