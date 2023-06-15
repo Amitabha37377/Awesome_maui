@@ -489,7 +489,7 @@ local dock = awful.popup {
       { margins = { top = 8, bottom = 5, left = 8, right = 90 } })
   end,
   shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, 5)
+    gears.shape.rounded_rect(cr, width, height, 15)
   end,
   -- opacity = 0.9
 }

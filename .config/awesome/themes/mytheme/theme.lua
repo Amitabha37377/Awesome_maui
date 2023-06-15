@@ -82,7 +82,7 @@ theme.layout_cornerse                           = "/usr/share/awesome/themes/def
 -- --Ayu Dark
 theme.taglist_bg_empty                          = "#00000080"
 theme.taglist_fg_empty                          = "#bababa"
-theme.taglist_bg_occupied                       = "#3e3e3e"
+theme.taglist_bg_occupied                       = "#151544"
 theme.taglist_fg_occupied                       = "#f0f0f0"
 theme.taglist_bg_focus                          = "#6ab0c1"
 theme.taglist_fg_focus                          = "#2b2b2b"

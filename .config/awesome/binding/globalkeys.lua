@@ -174,7 +174,7 @@ function _M.get()
     end, { description = "toggle mute", group = "hotkeys" }),
 
     --Toggle Dock
-    awful.key({ "Mod4" }, "b", function() dock.visible = not dock.visible end,
+    awful.key({ "Mod4" }, "z", function() dock.visible = not dock.visible end,
       { description = "Toggle dock", group = "Custom" }),
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
